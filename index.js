@@ -19,7 +19,10 @@ io.on('connection', function (socket) {
     //console.log("new user connected")
 
     socket.on('chat', function (msg) {
-        console.log(msg)
+        // console.log(msg)
+
+        //send data to client
+        io.emit('chat_transfer',msg)
     })
 })
 
