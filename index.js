@@ -16,7 +16,11 @@ app.get('/', function (req, res) {
 })
 
 io.on('connection', function (socket) {
-    console.log("new user connected")
+    //console.log("new user connected")
+
+    socket.on('chat', function (msg) {
+        console.log(msg)
+    })
 })
 
 expressServer.listen(3000, function () {
